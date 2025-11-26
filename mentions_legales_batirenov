@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentions Légales - Bâti Rénov</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-dark-blue: #063A5C;
+            --color-light-blue: #1FA4E5;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc;
+        }
+        .bg-dark-blue { background-color: var(--color-dark-blue); }
+        .text-dark-blue { color: var(--color-dark-blue); }
+        .bg-light-blue { background-color: var(--color-light-blue); }
+        .text-light-blue { color: var(--color-light-blue); }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex flex-col items-start">
+                <a href="index.html" class="text-3xl font-extrabold text-dark-blue leading-none">
+                    Bâti <span class="text-light-blue">Rénov</span>
+                </a>
+                <span class="text-xs font-semibold text-gray-500 mt-1 uppercase tracking-wider hidden sm:block">
+                    L'Excellence du Confort Habitat
+                </span>
+            </div>
+            <nav>
+                <a href="index.html" class="px-5 py-2 text-sm font-bold text-white bg-light-blue rounded-full shadow-lg hover:bg-dark-blue transition duration-300">
+                    Retour à l'accueil
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenu Mentions Légales -->
+    <main class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <h1 class="text-5xl font-extrabold text-dark-blue mb-8 text-center">Mentions Légales</h1>
+            
+            <div class="space-y-8 text-gray-700 leading-relaxed">
+                
+                <!-- Section 1 : Informations légales -->
+                <section>
+                    <h2 class="text-2xl font-bold text-light-blue mb-4">1. Informations légales</h2>
+                    <p class="mb-3">
+                        Conformément aux dispositions des articles 6-III et 19 de la Loi n° 2004-575 du 21 juin 2004 pour la Confiance dans l'économie numérique, dite L.C.E.N., nous portons à la connaissance des utilisateurs et visiteurs du site les informations suivantes :
+                    </p>
+                    <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-light-blue">
+                        <p><strong>Raison sociale :</strong> BÂTI RÉNOV SARL</p>
+                        <p><strong>Forme juridique :</strong> Société à Responsabilité Limitée (SARL)</p>
+                        <p><strong>Siège social :</strong> 15 Rue du Jeu de Mail, 59140 Dunkerque, France</p>
+                        <p><strong>Téléphone :</strong> <a href="tel:+33374060516" class="text-light-blue hover:underline">+33 3 74 06 05 16</a> / <a href="tel:+33652641573" class="text-light-blue hover:underline">+33 6 52 64 15 73</a></p>
+                        <p><strong>Email :</strong> <a href="mailto:contact@batirenov-dunkerque.fr" class="text-light-blue hover:underline">contact@batirenov-dunkerque.fr</a></p>
+                        <p><strong>SIRET :</strong> 92145235500016</p>
+                        <p><strong>TVA intracommunautaire :</strong> FR55921452355</p>
+                        <p><strong>Responsable de publication :</strong> Bâti Rénov</p>
+                        <p><strong>Directeur de publication :</strong> Bâti Rénov</p>
+                    </div>
+                </section>
+
+                <!-- Section 2 : Hébergement -->
+                <section>
+                    <h2 class="text-2xl font-bold text-light-blue mb-4">2. Hébergement du site</h2>
+                    <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-light-blue">
+                        <p><strong>Hébergeur :</strong> OVH</p>
+                        <p><strong>Adresse :</strong> 2 rue Kellermann, 59100 Roubaix, France</p>
+                        <p><strong>Site web :</strong> <a href="https://www.ovh.com" target="_blank" class="text-light-blue hover:underline">www.ovh.com</a></p>
+                        <p><strong>Téléphone :</strong> 1007 (depuis la France)</p>
+                    </div>
+                </section>
+
+                <!-- Section 3 : Propriété intellectuelle -->
+                <section>
+                    <h2 class="text-2xl font-bold text-light-blue mb-4">3. Propriété intellectuelle</h2>
+                    <p>
+                        L'ensemble des contenus présents sur ce site (textes, images, graphismes, logo, icônes, sons, logiciels, etc.) est la propriété exclusive de BÂTI RÉNOV ou de ses partenaires, et est protégé par les lois françaises et internationales relatives à la propriété intellectuelle.
+                    </p>
+                    <p class="mt-3">
+                        Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de BÂTI RÉNOV.
+                    </p>
+                </section>
+
+                <!-- Section 4 : Données personnelles -->
+                <section>
+                    <h2 class="text-2xl font-bold text-light-blue mb-4">4. Protection des données personnelles</h2>
+                    <p>
+                        Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés du 6 janvier 1978 modifiée, vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données personnelles vous concernant.
+                    </p>
+                    <p class="mt-3">
+                        Pour exercer ces droits ou pour toute question relative au traitement de vos données, vous pouvez nous contacter :
+                    </p>
+                    <ul class="list-disc list-inside mt-2 ml-4">
+                        <li>Par email : <a href="mailto:contact@batirenov-dunkerque.fr" class="text-light-blue hover:underline">contact@batirenov-dunkerque.fr</a></li>
+                        <li>Par courrier : 15 Rue du Jeu de Mail, 59140 Dunkerque, France</li>
+                    </ul>
+                    <p class="mt-3">
+                        Pour plus d'informations, veuillez consulter notre <a href="politique-confidentialite.html" class="text-light-blue font-semibold hover:underline">Politique de confidentialité</a>.
+                    </p>
+                </section>
+
+                <!-- Section 5 : Cookies -->
+                <section>
+                    <h2 class="text-2xl font-bold text-light-blue mb-4">5. Cookies</h2>
+                    <p>
+                        Le site peut être amené à vous demander l'acceptation de cookies pour des besoins de statistiques et d'affichage. Un cookie est une information déposée sur votre disque dur par le serveur du site que vous visitez.
+                    </p>
+                    <p class="mt-3">
+                        Vous pouvez refuser l'utilisation des cookies en configurant votre navigateur. Cependant, certaines fonctionnalités du site peuvent ne pas être accessibles.
+                    </p>
+                </section>
+
+                <!-- Section 6 : Responsabilité -->
+                <section>
+                    <h2 class="text-2xl font-bold text-light-blue mb-4">6. Limitation de responsabilité</h2>
+                    <p>
+                        BÂTI RÉNOV s'efforce d'assurer au mieux l'exactitude et la mise à jour des informations diffusées sur ce site. Toutefois, nous ne pouvons garantir l'exactitude, la précision ou l'exhaustivité des informations mises à disposition.
+                    </p>
+                    <p class="mt-3">
+                        BÂTI RÉNOV ne pourra être tenue responsable des dommages directs ou indirects résultant de l'accès ou de l'utilisation de ce site, y compris l'inaccessibilité, les pertes de données ou les dommages causés à votre système informatique.
+                    </p>
+                </section>
+
+                <!-- Section 7 : Droit applicable -->
+                <section>
+                    <h2 class="text-2xl font-bold text-light-blue mb-4">7. Droit applicable et juridiction</h2>
+                    <p>
+                        Les présentes mentions légales sont régies par le droit français. En cas de litige, et à défaut de résolution amiable, les tribunaux français seront seuls compétents.
+                    </p>
+                </section>
+
+                <!-- Section 8 : Contact -->
+                <section>
+                    <h2 class="text-2xl font-bold text-light-blue mb-4">8. Nous contacter</h2>
+                    <p>
+                        Pour toute question concernant ces mentions légales, vous pouvez nous contacter :
+                    </p>
+                    <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-light-blue mt-4">
+                        <p><strong>Email :</strong> <a href="mailto:contact@batirenov-dunkerque.fr" class="text-light-blue hover:underline">contact@batirenov-dunkerque.fr</a></p>
+                        <p><strong>Téléphone :</strong> <a href="tel:+33374060516" class="text-light-blue hover:underline">+33 3 74 06 05 16</a></p>
+                        <p><strong>Adresse :</strong> 15 Rue du Jeu de Mail, 59140 Dunkerque, France</p>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Retour accueil -->
+            <div class="text-center mt-12">
+                <a href="index.html" class="inline-block px-8 py-3 text-lg font-bold text-white bg-light-blue rounded-xl shadow-lg hover:bg-dark-blue transition-all">
+                    Retour à l'accueil
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer simplifié -->
+    <footer class="bg-dark-blue text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm text-gray-300">
+                © 2025 Bâti Rénov. Tous droits réservés. | 
+                <a href="mentions-legales.html" class="hover:text-light-blue transition">Mentions légales</a> | 
+                <a href="politique-confidentialite.html" class="hover:text-light-blue transition">Politique de confidentialité</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
