@@ -24,7 +24,7 @@
         .border-light-blue { border-color: var(--color-light-blue); }
         .hero-section {
             background-color: var(--color-dark-blue);
-            background-image: linear-gradient(rgba(6, 58, 92, 0.85), rgba(6, 58, 92, 0.85)), url('https://nsm09.casimages.com/img/2025/11/25//25112506034526865018676507.png');
+            background-image: linear-gradient(rgba(6, 58, 92, 0.65), rgba(6, 58, 92, 0.75)), url('https://nsm09.casimages.com/img/2025/11/25//25112506034526865018676507.png');
             background-size: cover;
             background-position: center;
         }
@@ -90,40 +90,63 @@
 </head>
 <body class="text-gray-800">
 
-    <!-- 1. Barre de Navigation (Header) -->
-    <header class="sticky top-0 z-50 bg-white shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <!-- Logo & Baseline -->
-            <div class="flex flex-col items-start">
-                <a href="#hero" class="text-3xl font-extrabold text-dark-blue leading-none">
-                    Bâti <span class="text-light-blue">Rénov</span>
-                </a>
-                <span class="text-xs font-semibold text-gray-500 mt-1 uppercase tracking-wider hidden sm:block">
-                    L’Excellence du Confort Habitat
-                </span>
-            </div>
-
-            <!-- Menu de Navigation et CTA -->
-            <nav class="flex items-center space-x-6">
-                <ul class="hidden lg:flex space-x-6 text-gray-600 font-medium">
-                    <li><a href="#prestations" class="hover:text-light-blue transition duration-150">Façade & ITE</a></li>
-                    <li><a href="#realisations" class="hover:text-light-blue transition duration-150">Réalisations</a></li>
-                    <li><a href="#aides" class="hover:text-light-blue transition duration-150">Aides & Subventions</a></li>
-                    <li><a href="#contact" class="hover:text-light-blue transition duration-150">Contact</a></li>
-                </ul>
-
-                <!-- Bouton d'Action (visible sur toutes les tailles) -->
-                <a href="#devis-form" class="cta-button px-5 py-2 text-sm font-bold text-white bg-light-blue rounded-full shadow-lg shadow-light-blue/40 hover:bg-light-blue transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-light-blue focus:ring-opacity-50">
-                    Devis Gratuit
-                </a>
-                
-                <!-- Menu Mobile (simplifié, les liens pointent vers les sections de la page) -->
-                <button class="lg:hidden text-gray-700 hover:text-light-blue transition duration-150" aria-label="Menu">
-                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
-            </nav>
+<!-- 1. Barre de Navigation (Header) -->
+<header class="sticky top-0 z-50 bg-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        
+        <!-- Logo & Baseline -->
+        <div class="flex flex-col items-start">
+            <a href="#hero" class="text-3xl font-extrabold text-dark-blue leading-none">
+                Bâti <span class="text-light-blue">Rénov</span>
+            </a>
+            <span class="text-xs font-semibold text-gray-500 mt-1 uppercase tracking-wider hidden sm:block">
+                L’Excellence du Confort Habitat
+            </span>
         </div>
-    </header>
+
+        <!-- Menu Desktop + CTA -->
+        <nav class="flex items-center space-x-6">
+            <!-- Menu Desktop -->
+            <ul class="hidden lg:flex space-x-6 text-gray-600 font-medium">
+                <li><a href="#prestations" class="hover:text-light-blue transition">Façade & ITE</a></li>
+                <li><a href="#realisations" class="hover:text-light-blue transition">Réalisations</a></li>
+                <li><a href="#aides" class="hover:text-light-blue transition">Aides & Subventions</a></li>
+                <li><a href="#contact" class="hover:text-light-blue transition">Contact</a></li>
+            </ul>
+
+            <!-- CTA -->
+            <a href="#devis-form"
+               class="cta-button px-5 py-2 text-sm font-bold text-white bg-light-blue rounded-full shadow-lg shadow-light-blue/40 hover:bg-light-blue transition transform hover:scale-105">
+                Devis Gratuit
+            </a>
+
+            <!-- Bouton Menu Mobile -->
+            <button id="btnMenuMobile"
+                class="lg:hidden text-gray-700 hover:text-light-blue transition"
+                aria-label="Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Menu Mobile déroulant -->
+    <div id="menuMobile"
+         class="hidden flex flex-col bg-white shadow-xl border-t border-gray-200 px-6 py-4 space-y-4 lg:hidden">
+         
+        <a href="#prestations" class="text-gray-700 font-semibold hover:text-light-blue">Façade & ITE</a>
+        <a href="#realisations" class="text-gray-700 font-semibold hover:text-light-blue">Réalisations</a>
+        <a href="#aides" class="text-gray-700 font-semibold hover:text-light-blue">Aides & Subventions</a>
+        <a href="#contact" class="text-gray-700 font-semibold hover:text-light-blue">Contact</a>
+        <a href="#devis-form"
+           class="mt-2 text-center px-5 py-2 text-sm font-bold text-white bg-light-blue rounded-full shadow-md hover:bg-light-blue transition">
+           Devis Gratuit
+        </a>
+    </div>
+</header>
+
 
     <!-- 2. Section Héro (Hero) -->
     <main id="hero" class="hero-section text-white py-24 sm:py-32 lg:py-48">
@@ -1296,6 +1319,13 @@
         window.onload = function() {
             updateProgress(1);
         }
+
+document.getElementById("btnMenuMobile").addEventListener("click", function () {
+    const menu = document.getElementById("menuMobile");
+    menu.classList.toggle("hidden");
+});
+
+
     </script>
 
 </body>
