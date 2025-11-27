@@ -86,11 +86,31 @@
             background-color: var(--color-light-blue);
             border-color: var(--color-light-blue);
         }
+        <style>
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-10px); }
+}
+
+.menu-open {
+  animation: slideDown 0.25s ease-out forwards;
+}
+
+.menu-close {
+  animation: slideUp 0.25s ease-in forwards;
+}
+</style>
+
     </style>
 </head>
 <body class="text-gray-800">
 
-<!-- 1. Barre de Navigation (Header) -->
+ <!-- 1. Barre de Navigation (Header) -->
 <header class="sticky top-0 z-50 bg-white shadow-lg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         
@@ -133,41 +153,428 @@
     </div>
 
     <!-- Menu Mobile déroulant -->
-    <div id="menuMobile"
-         class="hidden flex flex-col bg-white shadow-xl border-t border-gray-200 px-6 py-4 space-y-4 lg:hidden">
+<div id="menuMobile"
+     class="hidden flex flex-col bg-white shadow-xl border-t border-gray-200 px-6 py-4 space-y-4 lg:hidden opacity-0">
          
-        <a href="#prestations" class="text-gray-700 font-semibold hover:text-light-blue">Façade & ITE</a>
-        <a href="#realisations" class="text-gray-700 font-semibold hover:text-light-blue">Réalisations</a>
-        <a href="#aides" class="text-gray-700 font-semibold hover:text-light-blue">Aides & Subventions</a>
-        <a href="#contact" class="text-gray-700 font-semibold hover:text-light-blue">Contact</a>
-        <a href="#devis-form"
-           class="mt-2 text-center px-5 py-2 text-sm font-bold text-white bg-light-blue rounded-full shadow-md hover:bg-light-blue transition">
-           Devis Gratuit
-        </a>
-    </div>
+    <a href="#prestations" class="text-gray-700 font-semibold hover:text-light-blue">Façade & ITE</a>
+    <a href="#realisations" class="text-gray-700 font-semibold hover:text-light-blue">Réalisations</a>
+    <a href="#aides" class="text-gray-700 font-semibold hover:text-light-blue">Aides & Subventions</a>
+    <a href="#contact" class="text-gray-700 font-semibold hover:text-light-blue">Contact</a>
+
+    <a href="#devis-form"
+       class="mt-2 text-center px-5 py-2 text-sm font-bold text-white bg-light-blue rounded-full shadow-md hover:bg-light-blue transition">
+       Devis Gratuit
+    </a>
+
+</div>
+
+<header>
 </header>
 
+<main id="hero" class="hero-section text-white py-24 sm:py-32 lg:py-48">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid md:grid-cols-1 lg:grid-cols-12 gap-10 items-center">
 
-    <!-- 2. Section Héro (Hero) -->
-    <main id="hero" class="hero-section text-white py-24 sm:py-32 lg:py-48">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <!-- Titre Principal : FOCUS FAÇADE -->
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">
-                Rénovez votre Façade : <br class="hidden lg:inline"> Esthétique et Isolation au meilleur prix
-            </h1>
+            <div class="lg:col-span-7 text-center lg:text-left mb-10 lg:mb-0">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
+                    Rénovez votre Façade : <br class="hidden lg:inline"> Esthétique et Isolation au meilleur prix
+                </h1>
 
-            <!-- Sous-titre descriptif -->
-            <p class="text-lg sm:text-xl text-indigo-100 max-w-4xl mx-auto mb-10">
-                Spécialiste de la Rénovation de Façade et de l'Isolation Thermique par l'Extérieur (ITE) en Hauts-de-France.
-                Fiabilité, garanties et accompagnement complet pour un habitat durable.
-            </p>
+                <p class="text-lg sm:text-xl text-white-100 max-w-4xl lg:max-w-none mx-auto mb-10">
+                    Spécialiste de la Rénovation de Façade et de l'Isolation Thermique par l'Extérieur (ITE) en Hauts-de-France.
+                    Fiabilité, garanties et accompagnement complet pour un habitat durable.
+                </p>
 
-            <!-- CTA Principal -->
-            <a href="#devis-form" class="cta-button inline-block px-12 py-4 text-xl font-bold text-dark-blue bg-light-blue rounded-xl shadow-2xl shadow-light-blue/50 hover:bg-white">
-                Demandez un devis gratuit pour ma façade
-            </a>
+                <a href="#devis-section" class="cta-button inline-block px-12 py-4 text-xl font-bold text-dark-blue bg-light-blue rounded-xl shadow-2xl shadow-light-blue/50 hover:bg-white transition-colors lg:hidden">
+                    Demandez un devis gratuit pour ma façade
+                </a>
+            </div>
+
+            <div id="devis-form" class="lg:col-span-5 w-full">
+                <section id="devis-section-hero" class="bg-transparent py-0"> 
+                    <div class="max-w-full">
+                        <div class="bg-white p-6 md:p-8 rounded-3xl shadow-2xl border border-gray-100">
+                            <h3 class="text-2xl font-bold text-dark-blue mb-6 text-center">
+                                ⏳ Recevez votre Devis en 3 Clics !
+                            </h3>
+                            <div id="form-wrapper">
+                                <div class="mb-8">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <div class="flex items-center flex-1">
+                                            <div class="relative">
+                                                <svg class="w-12 h-12 transform -rotate-90">
+                                                    <circle cx="24" cy="24" r="20" stroke="#e5e7eb" stroke-width="3" fill="none"/>
+                                                    <circle id="circle-1" class="progress-circle" cx="24" cy="24" r="20" stroke="url(#gradient1)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                                                </svg>
+                                                <div class="absolute inset-0 flex items-center justify-center">
+                                                    <span id="num-1" class="text-md font-bold text-light-blue">1</span>
+                                                </div>
+                                            </div>
+                                            <div class="h-2 bg-gray-200 flex-1 mx-2 rounded-full overflow-hidden">
+                                                <div id="line-1" class="h-full bg-light-blue w-0 transition-all duration-700 rounded-full"></div>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center flex-1">
+                                            <div class="relative">
+                                                <svg class="w-12 h-12 transform -rotate-90">
+                                                    <circle cx="24" cy="24" r="20" stroke="#e5e7eb" stroke-width="3" fill="none"/>
+                                                    <circle id="circle-2" class="progress-circle" cx="24" cy="24" r="20" stroke="url(#gradient2)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                                                </svg>
+                                                <div class="absolute inset-0 flex items-center justify-center">
+                                                    <span id="num-2" class="text-md font-bold text-gray-400">2</span>
+                                                </div>
+                                            </div>
+                                            <div class="h-2 bg-gray-200 flex-1 mx-2 rounded-full overflow-hidden">
+                                                <div id="line-2" class="h-full bg-light-blue w-0 transition-all duration-700 rounded-full"></div>
+                                            </div>
+                                        </div>
+                                        <div class="relative">
+                                            <svg class="w-12 h-12 transform -rotate-90">
+                                                <circle cx="24" cy="24" r="20" stroke="#e5e7eb" stroke-width="3" fill="none"/>
+                                                <circle id="circle-3" class="progress-circle" cx="24" cy="24" r="20" stroke="url(#gradient3)" stroke-width="3" fill="none" stroke-linecap="round"/>
+                                            </svg>
+                                            <div class="absolute inset-0 flex items-center justify-center">
+                                                <span id="num-3" class="text-md font-bold text-gray-400">3</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-3 gap-1">
+                                        <span class="text-center text-xs font-semibold text-dark-blue">📋 Projet</span>
+                                        <span class="text-center text-xs font-semibold text-gray-600">🌡️ Isolation</span>
+                                        <span class="text-center text-xs font-semibold text-gray-600">🏠 Localisation & Contact</span>
+                                    </div>
+                                </div>
+                                <form id="modern-form">
+                                    <div id="error-message" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-6 font-bold" role="alert">
+                                        Une erreur est survenue lors de l'envoi. Veuillez réessayer.
+                                    </div>
+
+                                    <div class="page active" id="page-1">
+                                        <div class="space-y-4"> 
+                                            <div class="text-center mb-6">
+                                                <h2 class="text-xl font-bold text-gray-900 mb-1">1. Quel est votre projet ?</h2>
+                                                <p class="text-sm text-gray-600">Dites-nous en plus sur votre façade</p>
+                                            </div>
+
+                                            <div class="grid md:grid-cols-2 gap-4">
+                                                <div class="group">
+                                                    <label class="flex items-center gap-2 text-sm font-bold text-gray-700 mb-1">Surface (m²) *</label>
+                                                    <input type="number" name="surface" required min="10" placeholder="Ex: 150" class="input-modern w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-md font-semibold text-gray-900">
+                                                </div>
+                                                <div class="group">
+                                                    <label class="flex items-center gap-2 text-sm font-bold text-gray-700 mb-1">Délai souhaité *</label>
+                                                    <select name="Délai_souhaité" required class="input-modern w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-md font-semibold bg-white text-gray-900">
+                                                        <option value="" disabled selected>Choisissez une option</option>
+                                                        <option value="immediat">🚀 Dès que possible</option>
+                                                        <option value="3mois">⏰ Dans les 3 mois</option>
+                                                        <option value="6mois">📅 Entre 3 et 6 mois</option>
+                                                        <option value="renseignement">💡 Simple renseignement</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="bg-gray-50 rounded-xl p-4 border-2 border-gray-200">
+                                                <label class="flex items-center gap-2 text-base font-bold text-dark-blue mb-3">Support actuel de la façade *</label>
+                                                <div class="grid sm:grid-cols-2 gap-2">
+                                                    <label class="radio-card flex items-center gap-2 p-3 bg-white rounded-lg border-2 border-gray-200 cursor-pointer hover:border-light-blue transition-all">
+                                                        <input type="radio" name="Support_actuel" value="crepi_ancien" required class="w-4 h-4 accent-custom">
+                                                        <div class="flex-1"><div class="font-bold text-sm text-gray-900">🏚️ Crêpi ancien</div></div>
+                                                    </label>
+                                                    <label class="radio-card flex items-center gap-2 p-3 bg-white rounded-lg border-2 border-gray-200 cursor-pointer hover:border-light-blue transition-all">
+                                                        <input type="radio" name="Support_actuel" value="peinture" class="w-4 h-4 accent-custom">
+                                                        <div class="flex-1"><div class="font-bold text-sm text-gray-900">🎨 Peinture</div></div>
+                                                    </label>
+                                                    <label class="radio-card flex items-center gap-2 p-3 bg-white rounded-lg border-2 border-gray-200 cursor-pointer hover:border-light-blue transition-all">
+                                                        <input type="radio" name="Support_actuel" value="neuf" class="w-4 h-4 accent-custom">
+                                                        <div class="flex-1"><div class="font-bold text-sm text-gray-900">🧱 Support neuf</div></div>
+                                                    </label>
+                                                    <label class="radio-card flex items-center gap-2 p-3 bg-white rounded-lg border-2 border-gray-200 cursor-pointer hover:border-light-blue transition-all">
+                                                        <input type="radio" name="Support_actuel" value="autre" class="w-4 h-4 accent-custom">
+                                                        <div class="flex-1"><div class="font-bold text-sm text-gray-900">❓ Autre</div></div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-end mt-6">
+                                            <button type="button" onclick="nextPage(2)" class="px-6 py-2 text-md font-bold text-white bg-dark-blue rounded-xl shadow-lg hover:bg-light-blue transition-all flex items-center gap-2">
+                                                <span>Continuer</span>
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="page" id="page-2">
+                                        <div class="space-y-4">
+                                            <div class="text-center mb-6">
+                                                <h2 class="text-xl font-bold text-gray-900 mb-1">2. Intérêt pour l'Isolation</h2>
+                                                <p class="text-sm text-gray-600">Un projet d'Isolation Thermique Extérieure (ITE) ?</p>
+                                            </div>
+                                            
+                                            <div class="bg-gray-50 rounded-xl p-4 border-2 border-gray-200">
+                                                <label class="flex items-center gap-2 text-base font-bold text-dark-blue mb-2">Isolation Thermique Extérieure (ITE) *</label>
+                                                <p class="text-sm text-gray-600 mb-3">Souhaitez-vous coupler ce projet de ravalement avec une ITE ?</p>
+                                                <div class="flex flex-wrap gap-2">
+                                                    <label class="radio-card flex items-center gap-2 px-4 py-2 bg-white rounded-lg border-2 border-gray-200 cursor-pointer hover:border-light-blue transition-all">
+                                                        <input type="radio" name="ITE_intéret" value="oui" required class="w-4 h-4 accent-custom">
+                                                        <span class="font-bold text-sm text-gray-900">✅ Oui</span>
+                                                    </label>
+                                                    <label class="radio-card flex items-center gap-2 px-4 py-2 bg-white rounded-lg border-2 border-gray-200 cursor-pointer hover:border-light-blue transition-all">
+                                                        <input type="radio" name="ITE_intéret" value="non" class="w-4 h-4 accent-custom">
+                                                        <span class="font-bold text-sm text-gray-900">❌ Non</span>
+                                                    </label>
+                                                    <label class="radio-card flex items-center gap-2 px-4 py-2 bg-white rounded-lg border-2 border-gray-200 cursor-pointer hover:border-light-blue transition-all">
+                                                        <input type="radio" name="ITE_intéret" value="information" class="w-4 h-4 accent-custom">
+                                                        <span class="font-bold text-sm text-gray-900">💬 Infos</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="flex justify-between mt-6 gap-3">
+                                            <button type="button" onclick="prevPage(1)" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-6 rounded-xl shadow-md transition-all flex items-center gap-2">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12"/></svg>
+                                                <span>Précédent</span>
+                                            </button>
+                                            <button type="button" onclick="nextPage(3)" class="px-6 py-2 text-md font-bold text-white bg-dark-blue rounded-xl shadow-lg hover:bg-light-blue transition-all flex items-center gap-2">
+                                                <span>Continuer</span>
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="page" id="page-3">
+                                        <div class="space-y-4">
+                                            <div class="text-center mb-6">
+                                                <h2 class="text-xl font-bold text-gray-900 mb-1">3. Localisation et Contact</h2>
+                                                <p class="text-sm text-gray-600">Où se situe votre chantier et qui devons-nous contacter ?</p>
+                                            </div>
+
+                                            <div class="border-b pb-4 mb-4">
+                                                <h3 class="text-lg font-bold text-gray-800 mb-3">📍 Où se situe le chantier ?</h3>
+                                                <div class="grid md:grid-cols-2 gap-4">
+                                                    <div>
+                                                        <label class="flex items-center gap-2 text-sm font-bold text-gray-700 mb-1">Code Postal *</label>
+                                                        <input type="text" name="Code_Postal" required class="input-modern w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-md font-semibold text-gray-900" placeholder="Ex: 59140">
+                                                    </div>
+                                                    <div>
+                                                        <label class="flex items-center gap-2 text-sm font-bold text-gray-700 mb-1">Ville *</label>
+                                                        <input type="text" name="Ville" required class="input-modern w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-md font-semibold text-gray-900" placeholder="Ex: Lille">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label class="flex items-center gap-2 text-sm font-bold text-gray-700 mb-1">Adresse du chantier *</label>
+                                                    <input type="text" name="Adresse" required class="input-modern w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-md font-semibold text-gray-900" placeholder="Ex: 12 rue de la République">
+                                                </div>
+                                            </div>
+
+                                            <div class="pt-4">
+                                                <h3 class="text-lg font-bold text-gray-800 mb-3">👤 Vos coordonnées</h3>
+                                                <div class="grid md:grid-cols-2 gap-4">
+                                                    <div><label class="flex items-center gap-2 text-sm font-bold text-gray-700 mb-1">Civilité *</label>
+                                                        <select name="Civilité" required class="input-modern w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-md font-semibold bg-white text-gray-900">
+                                                            <option value="" disabled selected>Sélectionner</option><option value="Mme">👩 Madame</option><option value="M">👨 Monsieur</option>
+                                                        </select>
+                                                    </div>
+                                                    <div><label class="flex items-center gap-2 text-sm font-bold text-gray-700 mb-1">Prénom *</label>
+                                                        <input type="text" name="Prénom" required class="input-modern w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-md font-semibold text-gray-900" placeholder="Jean">
+                                                    </div>
+                                                    <div><label class="flex items-center gap-2 text-sm font-bold text-gray-700 mb-1">Nom *</label>
+                                                        <input type="text" name="Nom" required class="input-modern w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-md font-semibold text-gray-900" placeholder="Dupont">
+                                                    </div>
+                                                    <div><label class="flex items-center gap-2 text-sm font-bold text-gray-700 mb-1">Téléphone *</label>
+                                                        <input type="tel" name="Téléphone" required class="input-modern w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-md font-semibold text-gray-900" placeholder="06 12 34 56 78">
+                                                    </div>
+                                                </div>
+                                                <div><label class="flex items-center gap-2 text-sm font-bold text-gray-700 mb-1">E-mail *</label>
+                                                    <input type="email" name="email" required class="input-modern w-full px-4 py-3 border-2 border-gray-200 rounded-xl text-md font-semibold text-gray-900" placeholder="jean.dupont@example.com">
+                                                </div>
+                                                <div class="bg-gray-50 rounded-xl p-4 border-2 border-gray-200">
+                                                    <label class="flex items-start gap-3 cursor-pointer group">
+                                                        <input type="checkbox" name="consent" required class="mt-1 w-5 h-5 rounded border-gray-400 accent-custom">
+                                                        <span class="text-sm text-gray-700 leading-relaxed">
+                                                            J'accepte d'être recontacté(e) par <strong class="text-light-blue">Bâti Rénov</strong> pour mon projet de rénovation.
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="flex justify-between mt-6 gap-3">
+                                            <button type="button" onclick="prevPage(2)" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-6 rounded-xl shadow-md transition-all flex items-center gap-2">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12"/></svg>
+                                                <span>Précédent</span>
+                                            </button>
+                                            <button type="submit" id="submit-btn" class="px-6 py-2 text-md font-bold text-white bg-dark-blue rounded-xl shadow-2xl hover:bg-light-blue transition-all flex items-center gap-2">
+                                                <span>🎉 Recevoir Mon Devis Gratuit</span>
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
-    </main>
+    </div>
+</main>
+<svg width="0" height="0">
+    <defs>
+        <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:var(--color-light-blue);stop-opacity:1" /><stop offset="100%" style="stop-color:var(--color-dark-blue);stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:var(--color-dark-blue);stop-opacity:1" /><stop offset="100%" style="stop-color:var(--color-light-blue);stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:var(--color-light-blue);stop-opacity:1" /><stop offset="100%" style="stop-color:var(--color-dark-blue);stop-opacity:1" />
+        </linearGradient>
+    </defs>
+</svg>
+
+<script>
+    const FORM = document.getElementById('modern-form');
+    // REMPLACER CETTE URL PAR VOTRE PROPRE LIEN GOOGLE APPS SCRIPT
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzt5km15di-5vsL3__Ma3YfZHn8aRiqFOJqW0UJqrhJw-BvoHsDlPg0yujHM5tsuEhwXw/exec';
+
+    function updateProgress(page) {
+        const circleRadius = 20; 
+        const circumference = 2 * Math.PI * circleRadius; 
+        
+        const circles = [
+            { circle: document.getElementById('circle-1'), num: document.getElementById('num-1') },
+            { circle: document.getElementById('circle-2'), num: document.getElementById('num-2') },
+            { circle: document.getElementById('circle-3'), num: document.getElementById('num-3') } 
+        ];
+
+        circles.forEach((item, i) => {
+            if (item.circle) {
+                item.circle.style.strokeDasharray = `${circumference} ${circumference}`;
+                item.circle.style.strokeDashoffset = (i + 1 <= page ? 0 : circumference) + 'px';
+            
+                if (i + 1 <= page) {
+                    item.num.className = 'text-md font-bold text-light-blue';
+                } else {
+                    item.num.className = 'text-md font-bold text-gray-400';
+                }
+            }
+        });
+
+        // Mise à jour des lignes
+        const line1 = document.getElementById('line-1');
+        if (line1) line1.style.width = page >= 2 ? '100%' : '0%';
+        
+        const line2 = document.getElementById('line-2');
+        if (line2) line2.style.width = page >= 3 ? '100%' : '0%';
+    }
+
+    function validateCurrentPage(currentPage) {
+        const page = document.getElementById('page-' + currentPage);
+        // On ne vérifie que les champs obligatoires dans la page actuelle
+        const inputs = page.querySelectorAll('input[required], select[required], textarea[required]');
+        let isValid = true;
+
+        for (let input of inputs) {
+            if (!input.checkValidity()) {
+                input.reportValidity();
+                isValid = false;
+                break;
+            }
+            if (input.type === 'radio' && input.hasAttribute('required')) {
+                const name = input.name;
+                const checked = page.querySelector(`input[name="${name}"]:checked`);
+                if (!checked) {
+                    // Pour les radios, on signale le premier du groupe si aucun n'est coché
+                    input.closest('.radio-card, .bg-gray-50').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    input.reportValidity();
+                    isValid = false;
+                    break;
+                }
+            }
+        }
+        return isValid;
+    }
+
+    function nextPage(pageNum) {
+        const cur = pageNum - 1;
+        // Vérifie si la page actuelle est valide
+        if (!validateCurrentPage(cur)) return;
+        
+        document.getElementById('page-' + cur).classList.remove('active');
+        document.getElementById('page-' + pageNum).classList.add('active');
+        updateProgress(pageNum);
+        window.scrollTo({ top: document.getElementById('devis-form').offsetTop, behavior: 'smooth' });
+
+        document.getElementById('error-message').classList.add('hidden');
+    }
+
+    function prevPage(pageNum) {
+        const cur = pageNum + 1;
+        
+        document.getElementById('page-' + cur).classList.remove('active');
+        document.getElementById('page-' + pageNum).classList.add('active');
+        updateProgress(pageNum);
+        window.scrollTo({ top: document.getElementById('devis-form').offsetTop, behavior: 'smooth' });
+    }
+
+    FORM.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Validation de la dernière page (Page 3)
+        if (!validateCurrentPage(3)) return;
+
+        const button = document.getElementById('submit-btn');
+        const formWrapper = document.getElementById('form-wrapper');
+        const originalButtonText = button.innerHTML;
+
+        button.disabled = true;
+        button.innerHTML = '<span class="animate-pulse">⏳ Envoi en cours...</span>';
+
+        document.getElementById('error-message').classList.add('hidden');
+
+        const formData = new FormData(FORM);
+
+        fetch(SCRIPT_URL, {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors'
+        })
+        .then(() => {
+            // Message de succès
+            formWrapper.innerHTML = `
+                <div class="text-center p-6 rounded-xl shadow-lg bg-white" style="border: 2px solid var(--color-light-blue);">
+                    <svg class="w-12 h-12 text-light-blue mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <h3 class="text-xl font-bold text-dark-blue mb-1">Demande Envoyée !</h3>
+                    <p class="text-sm text-gray-600">Votre devis est en cours de préparation.</p>
+                    <p class="mt-3 text-md font-medium text-dark-blue">Un conseiller vous recontactera sous 24h.</p>
+                    <button type="button" onclick="window.location.reload()" class="mt-4 bg-dark-blue text-white font-bold py-2 px-4 rounded-lg hover:bg-light-blue transition-all text-sm">
+                        Nouvelle Demande
+                    </button>
+                </div>
+            `;
+            window.scrollTo({ top: document.getElementById('devis-form').offsetTop, behavior: 'smooth' });
+        })
+        .catch(err => {
+            console.error('Erreur lors de l\'envoi du formulaire:', err);
+            button.disabled = false;
+            button.innerHTML = originalButtonText;
+            const errorMessage = document.getElementById('error-message');
+            errorMessage.classList.remove('hidden');
+            errorMessage.textContent = '❌ Une erreur de connexion est survenue. Veuillez réessayer.';
+            window.scrollTo({ top: document.getElementById('devis-form').offsetTop, behavior: 'smooth' });
+        });
+    });
+
+    // Initialisation
+    window.onload = function() {
+        updateProgress(1);
+    }
+
+    window.nextPage = nextPage;
+    window.prevPage = prevPage;
+</script>
 
     <!-- 3. Bande Avantages / Points Forts (3 Colonnes) -->
     <section class="py-12 bg-white shadow-xl -mt-16 relative z-10 rounded-t-xl">
@@ -270,7 +677,7 @@
     </section>
 
     <!-- 6. Section Réalisations (Avant / Après) -->
-<!-- 6. Section Réalisations (Avant / Après) -->
+
     <section id="realisations" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-extrabold text-center text-dark-blue mb-4">Nos Rénovations de Façade en Hauts-de-France</h2>
@@ -458,481 +865,7 @@
 <body>
 
 
-    <!-- 8.2. Section de Conversion Bicolonne (Point d'arrivée principal) -->
-    <section id="devis-form" class="py-12 md:py-20 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <!-- Titre central de la section -->
-            <div class="text-center mb-10">
-                <h1 class="text-4xl sm:text-5xl font-extrabold text-dark-blue mb-3 leading-tight">
-                    Vos travaux de Façade au meilleur prix
-                </h1>
-                <p class="text-xl text-gray-600 max-w-4xl mx-auto">
-                    Obtenez votre devis personnalisé en ligne et sécurisez les meilleures aides pour votre isolation thermique.
-                </p>
-            </div>
 
-            <!-- Conteneur des deux colonnes -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                
-                <!-- Colonne Gauche : Arguments de Vente et Preuves (5/12) -->
-                <div class="lg:col-span-5 space-y-8">
-                    
-                    <!-- Bloc d'Introduction / Héro (Texte) -->
-
-
-
-                    <div class="bg-white p-8 rounded-2xl shadow-xl sticky-form">
-					 
-                       <img src="https://files.cdn-files-a.com/uploads/10467913/800_gi-691e048381ec1.jpg"
-   					     class="w-80 h-auto rounded-xl object-cover mx-auto">
-                  
-					
-                      
-                        <h2  class="text-3xl font-bold text-dark-blue mb-4">
-                            L'Expert Rénovation de Façade en Hauts-de-France
-                        </h2>
-
-                        <p class="text-lg text-gray-700 mb-6">
-                            Que ce soit pour un simple ravalement esthétique ou une isolation thermique par l'extérieur (ITE) complète, Bâti Rénov vous assure un résultat durable et une optimisation maximale des aides financières.
-                        </p>
-                        
-                        <div class="space-y-4">
-                            <!-- Argument 1 -->
-                            <div class="flex items-start argument-card p-4 rounded-xl shadow-md">
-                                <svg class="w-8 h-8 text-light-blue mr-4 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                <div>
-                                    <h4 class="font-bold text-dark-blue">Certifié RGE Qualibat</h4>
-                                    <p class="text-sm text-gray-600">Garantie d'éligibilité aux aides et de qualité des travaux.</p>
-                                </div>
-                            </div>
-
-                            <!-- Argument 2 -->
-                            <div class="flex items-start argument-card p-4 rounded-xl shadow-md">
-                                <svg class="w-8 h-8 text-light-blue mr-4 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"/></svg>
-                                <div>
-                                    <h4 class="font-bold text-dark-blue">Zéro Avance de Frais (Aides)</h4>
-                                    <p class="text-sm text-gray-600">Nous nous occupons de votre dossier MaPrimeRénov' de A à Z.</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Argument 3 -->
-                            <div class="flex items-start argument-card p-4 rounded-xl shadow-md">
-                                <svg class="w-8 h-8 text-light-blue mr-4 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path d="M19 11a7 7 0 01-7 7m0 0l-4-4m4 4l4-4m-4-2.828l4.243-4.243m-4.243 4.243L8 15.172m-4.243-4.243A7 7 0 0113 4a7 7 0 010 14m-1-12a1 1 0 100-2 1 1 0 000 2z"/></svg>
-                                <div>
-                                    <h4 class="font-bold text-dark-blue">Devis Clair et Transparent</h4>
-                                    <p class="text-sm text-gray-600">Une estimation détaillée envoyée par un conseiller dédié en 48h.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Bloc de chiffres clés -->
-                        <div class="mt-8 pt-4 border-t border-gray-200 grid grid-cols-2 gap-4 text-center">
-                            <div>
-                                <div class="text-4xl font-extrabold text-light-blue">10+</div>
-                                <div class="text-sm font-semibold text-gray-600">Ans d'expérience</div>
-                            </div>
-                            <div>
-                                <div class="text-4xl font-extrabold text-light-blue">10 ans</div>
-                                <div class="text-sm font-semibold text-gray-600">Garantie Décennale</div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Colonne Droite : Formulaire Multi-Étapes (7/12) -->
-                <div class="lg:col-span-7">
-                    <div class="bg-white p-6 md:p-10 rounded-2xl shadow-2xl sticky-form">
-                        
-                        <!-- Conteneur d'affichage de l'erreur (initialement caché) -->
-                        <div id="error-message" class="hidden p-4 mb-4 bg-red-100 border-l-4 border-red-500 text-red-700 rounded-lg font-medium"></div>
-
-                        <!-- Conteneur pour le remplacement après soumission -->
-                        <div id="form-wrapper">
-
-                            <!-- Barre de progression -->
-                            <div class="mb-10">
-                                <div class="flex items-center justify-between mb-4">
-                                    <!-- Étape 1 -->
-                                    <div class="flex items-center flex-1">
-                                        <div class="relative">
-                                            <svg class="w-16 h-16 transform -rotate-90">
-                                                <circle cx="32" cy="32" r="28" stroke="#e5e7eb" stroke-width="4" fill="none"/>
-                                                <circle id="circle-1" class="progress-circle" cx="32" cy="32" r="28" stroke="url(#gradient1)" stroke-width="4" fill="none" stroke-linecap="round"/>
-                                            </svg>
-                                            <div class="absolute inset-0 flex items-center justify-center">
-                                                <span id="num-1" class="text-lg font-bold text-light-blue">1</span>
-                                            </div>
-                                        </div>
-                                        <div class="h-2 bg-gray-200 flex-1 mx-3 rounded-full overflow-hidden">
-                                            <div id="line-1" class="h-full bg-light-blue w-0 transition-all duration-700 rounded-full"></div>
-                                        </div>
-                                    </div>
-                                    <!-- Étape 2 -->
-                                    <div class="flex items-center flex-1">
-                                        <div class="relative">
-                                            <svg class="w-16 h-16 transform -rotate-90">
-                                                <circle cx="32" cy="32" r="28" stroke="#e5e7eb" stroke-width="4" fill="none"/>
-                                                <circle id="circle-2" class="progress-circle" cx="32" cy="32" r="28" stroke="url(#gradient2)" stroke-width="4" fill="none" stroke-linecap="round"/>
-                                            </svg>
-                                            <div class="absolute inset-0 flex items-center justify-center">
-                                                <span id="num-2" class="text-lg font-bold text-gray-400">2</span>
-                                            </div>
-                                        </div>
-                                        <div class="h-2 bg-gray-200 flex-1 mx-3 rounded-full overflow-hidden">
-                                            <div id="line-2" class="h-full bg-dark-blue w-0 transition-all duration-700 rounded-full"></div>
-                                        </div>
-                                    </div>
-                                    <!-- Étape 3 -->
-                                    <div class="relative">
-                                        <svg class="w-16 h-16 transform -rotate-90">
-                                            <circle cx="32" cy="32" r="28" stroke="#e5e7eb" stroke-width="4" fill="none"/>
-                                            <circle id="circle-3" class="progress-circle" cx="32" cy="32" r="28" stroke="url(#gradient3)" stroke-width="4" fill="none" stroke-linecap="round"/>
-                                        </svg>
-                                        <div class="absolute inset-0 flex items-center justify-center">
-                                            <span id="num-3" class="text-lg font-bold text-gray-400">3</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="grid grid-cols-3 gap-2">
-                                    <span class="text-center text-sm font-semibold text-dark-blue">📋 Projet</span>
-                                    <span class="text-center text-sm font-semibold text-gray-600">📍 Localisation</span>
-                                    <span class="text-center text-sm font-semibold text-gray-600">👤 Contact</span>
-                                </div>
-                            </div>
-
-                            <form id="modern-form">
-                                
-                                <!-- Page 1 : Détails du Projet -->
-                                <div class="page active" id="page-1">
-                                    <div class="space-y-6">
-                                        <div class="text-center mb-8">
-                                            <h2 class="text-3xl font-bold text-gray-900 mb-2">1. Quel est votre projet ?</h2>
-                                            <p class="text-gray-600">Dites-nous en plus sur votre façade</p>
-                                        </div>
-
-                                        <div class="grid md:grid-cols-2 gap-6">
-                                            <div class="group">
-                                                <label class="flex items-center gap-2 text-sm font-bold text-gray-700 mb-3">Surface (m²) *</label>
-                                                <input type="number" name="surface" required min="10" placeholder="Ex: 150" class="input-modern w-full px-5 py-4 border-2 border-gray-200 rounded-xl text-lg font-semibold">
-                                            </div>
-
-                                            <div class="group">
-                                                <label class="flex items-center gap-2 text-sm font-bold text-gray-700 mb-3">Délai souhaité *</label>
-                                                <select name="Délai_souhaité" required class="input-modern w-full px-5 py-4 border-2 border-gray-200 rounded-xl text-lg font-semibold bg-white">
-                                                    <option value="" disabled selected>Choisissez une option</option>
-                                                    <option value="immediat">🚀 Dès que possible</option>
-                                                    <option value="3mois">⏰ Dans les 3 mois</option>
-                                                    <option value="6mois">📅 Entre 3 et 6 mois</option>
-                                                    <option value="renseignement">💡 Simple renseignement</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div class="bg-gray-50 rounded-2xl p-6 border-2 border-gray-200">
-                                            <label class="flex items-center gap-2 text-base font-bold text-dark-blue mb-4">Support actuel de la façade *</label>
-                                            <div class="grid sm:grid-cols-2 gap-3">
-                                                <label class="radio-card flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 cursor-pointer hover:border-light-blue transition-all">
-                                                    <input type="radio" name="Support_actuel" value="crepi_ancien" required class="w-5 h-5 accent-custom">
-                                                    <div class="flex-1"><div class="font-bold text-gray-900">🏚️ Crêpi ancien</div><div class="text-xs text-gray-500">Enduit existant</div></div>
-                                                </label>
-                                                <label class="radio-card flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 cursor-pointer hover:border-light-blue transition-all">
-                                                    <input type="radio" name="Support_actuel" value="peinture" class="w-5 h-5 accent-custom">
-                                                    <div class="flex-1"><div class="font-bold text-gray-900">🎨 Peinture</div><div class="text-xs text-gray-500">Surface peinte</div></div>
-                                                </label>
-                                                <label class="radio-card flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 cursor-pointer hover:border-light-blue transition-all">
-                                                    <input type="radio" name="Support_actuel" value="neuf" class="w-5 h-5 accent-custom">
-                                                    <div class="flex-1"><div class="font-bold text-gray-900">🧱 Support neuf</div><div class="text-xs text-gray-500">Parpaing, brique</div></div>
-                                                </label>
-                                                <label class="radio-card flex items-center gap-3 p-4 bg-white rounded-xl border-2 border-gray-200 cursor-pointer hover:border-light-blue transition-all">
-                                                    <input type="radio" name="Support_actuel" value="autre" class="w-5 h-5 accent-custom">
-                                                    <div class="flex-1"><div class="font-bold text-gray-900">❓ Autre</div><div class="text-xs text-gray-500">Non défini</div></div>
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div class="bg-gray-50 rounded-2xl p-6 border-2 border-gray-200">
-                                            <label class="flex items-center gap-2 text-base font-bold text-dark-blue mb-2">Isolation Thermique Extérieure (ITE) *</label>
-                                            <p class="text-sm text-gray-600 mb-4">Souhaitez-vous coupler ce projet avec une ITE ?</p>
-                                            <div class="flex flex-wrap gap-3">
-                                                <label class="radio-card flex items-center gap-2 px-5 py-3 bg-white rounded-xl border-2 border-gray-200 cursor-pointer hover:border-light-blue transition-all">
-                                                    <input type="radio" name="ITE_intéret" value="oui" required class="w-5 h-5 accent-custom">
-                                                    <span class="font-bold text-gray-900">✅ Oui, j'en veux</span>
-                                                </label>
-                                                <label class="radio-card flex items-center gap-2 px-5 py-3 bg-white rounded-xl border-2 border-gray-200 cursor-pointer hover:border-light-blue transition-all">
-                                                    <input type="radio" name="ITE_intéret" value="non" class="w-5 h-5 accent-custom">
-                                                    <span class="font-bold text-gray-900">❌ Non merci</span>
-                                                </label>
-                                                <label class="radio-card flex items-center gap-2 px-5 py-3 bg-white rounded-xl border-2 border-gray-200 cursor-pointer hover:border-light-blue transition-all">
-                                                    <input type="radio" name="ITE_intéret" value="information" class="w-5 h-5 accent-custom">
-                                                    <span class="font-bold text-gray-900">💬 Plus d'infos</span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="flex justify-end mt-8">
-                                        <button type="button" onclick="nextPage(2)" class="px-8 py-3 text-lg font-bold text-white bg-dark-blue rounded-xl shadow-lg hover:bg-light-blue transition-all flex items-center gap-2">
-                                            <span>Continuer</span>
-                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <!-- Page 2 : Localisation -->
-                                <div class="page" id="page-2">
-                                    <div class="space-y-6">
-                                        <div class="text-center mb-8">
-                                            <h2 class="text-3xl font-bold text-gray-900 mb-2">2. Localisation du bien</h2>
-                                            <p class="text-gray-600">Où se situe votre chantier ?</p>
-                                        </div>
-
-                                        <div class="grid md:grid-cols-2 gap-6">
-                                            <div>
-                                                <label class="flex items-center gap-2 text-sm font-bold text-gray-700 mb-3">Code Postal *</label>
-                                                <input type="text" name="Code_Postal" required class="input-modern w-full px-5 py-4 border-2 border-gray-200 rounded-xl text-lg font-semibold" placeholder="Ex: 59140">
-                                            </div>
-                                            <div>
-                                                <label class="flex items-center gap-2 text-sm font-bold text-gray-700 mb-3">Ville *</label>
-                                                <input type="text" name="Ville" required class="input-modern w-full px-5 py-4 border-2 border-gray-200 rounded-xl text-lg font-semibold" placeholder="Ex: Lille">
-                                            </div>
-                                        </div>
-
-                                        <div>
-                                            <label class="flex items-center gap-2 text-sm font-bold text-gray-700 mb-3">Adresse du chantier *</label>
-                                            <input type="text" name="Adresse" required class="input-modern w-full px-5 py-4 border-2 border-gray-200 rounded-xl text-lg font-semibold" placeholder="Ex: 12 rue de la République">
-                                        </div>
-                                    </div>
-
-                                    <div class="flex justify-between mt-8 gap-4">
-                                        <button type="button" onclick="prevPage(1)" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-8 rounded-xl shadow-lg transition-all flex items-center gap-2">
-                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12"/></svg>
-                                            <span>Précédent</span>
-                                        </button>
-                                        <button type="button" onclick="nextPage(3)" class="px-8 py-3 text-lg font-bold text-white bg-dark-blue rounded-xl shadow-lg hover:bg-light-blue transition-all flex items-center gap-2">
-                                            <span>Continuer</span>
-                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <!-- Page 3 : Contact -->
-                                <div class="page" id="page-3">
-                                    <div class="space-y-6">
-                                        <div class="text-center mb-8">
-                                            <h2 class="text-3xl font-bold text-gray-900 mb-2">3. Vos coordonnées</h2>
-                                            <p class="text-gray-600">Recevez votre devis personnalisé</p>
-                                        </div>
-
-                                        <div class="grid md:grid-cols-2 gap-6">
-                                            <div><label class="flex items-center gap-2 text-sm font-bold text-gray-700 mb-3">Civilité *</label>
-                                                <select name="Civilité" required class="input-modern w-full px-5 py-4 border-2 border-gray-200 rounded-xl text-lg font-semibold bg-white">
-                                                    <option value="" disabled selected>Sélectionner</option><option value="Mme">👩 Madame</option><option value="M">👨 Monsieur</option>
-                                                </select>
-                                            </div>
-                                            <div><label class="flex items-center gap-2 text-sm font-bold text-gray-700 mb-3">Prénom *</label>
-                                                <input type="text" name="Prénom" required class="input-modern w-full px-5 py-4 border-2 border-gray-200 rounded-xl text-lg font-semibold" placeholder="Jean">
-                                            </div>
-                                            <div><label class="flex items-center gap-2 text-sm font-bold text-gray-700 mb-3">Nom *</label>
-                                                <input type="text" name="Nom" required class="input-modern w-full px-5 py-4 border-2 border-gray-200 rounded-xl text-lg font-semibold" placeholder="Dupont">
-                                            </div>
-                                            <div><label class="flex items-center gap-2 text-sm font-bold text-gray-700 mb-3">Téléphone *</label>
-                                                <input type="tel" name="Téléphone" required class="input-modern w-full px-5 py-4 border-2 border-gray-200 rounded-xl text-lg font-semibold" placeholder="06 12 34 56 78">
-                                            </div>
-                                        </div>
-
-                                        <div><label class="flex items-center gap-2 text-sm font-bold text-gray-700 mb-3">E-mail *</label>
-                                            <input type="email" name="email" required class="input-modern w-full px-5 py-4 border-2 border-gray-200 rounded-xl text-lg font-semibold" placeholder="jean.dupont@example.com">
-                                        </div>
-
-                                        <div class="bg-gray-50 rounded-2xl p-6 border-2 border-gray-200">
-                                            <label class="flex items-start gap-3 cursor-pointer group">
-                                                <input type="checkbox" name="consent" required class="mt-1 w-6 h-6 rounded border-gray-400 accent-custom">
-                                                <span class="text-sm text-gray-700 leading-relaxed">
-                                                    J'accepte d'être recontacté(e) par <strong class="text-light-blue">Bâti Rénov</strong> pour mon projet de rénovation.
-                                                </span>
-                                            </label>
-                                        </div>
-                                    </div>
-
-                                    <div class="flex justify-between mt-8 gap-4">
-                                        <button type="button" onclick="prevPage(2)" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-8 rounded-xl shadow-lg transition-all flex items-center gap-2">
-                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12"/></svg>
-                                            <span>Précédent</span>
-                                        </button>
-                                        <button type="submit" id="submit-btn" class="px-8 py-3 text-lg font-bold text-white bg-dark-blue rounded-xl shadow-2xl hover:bg-light-blue transition-all flex items-center gap-2">
-                                            <span>🎉 Recevoir Mon Devis Gratuit</span>
-                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    
-
-    <!-- SVG Gradients pour la progression -->
-    <svg width="0" height="0">
-        <defs>
-            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:var(--color-light-blue);stop-opacity:1" /><stop offset="100%" style="stop-color:var(--color-dark-blue);stop-opacity:1" />
-            </linearGradient>
-            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:var(--color-dark-blue);stop-opacity:1" /><stop offset="100%" style="stop-color:var(--color-light-blue);stop-opacity:1" />
-            </linearGradient>
-            <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:var(--color-light-blue);stop-opacity:1" /><stop offset="100%" style="stop-color:var(--color-dark-blue);stop-opacity:1" />
-            </linearGradient>
-        </defs>
-    </svg>
-
-    <!-- SCRIPT DU FORMULAIRE MULTI-ÉTAPES CORRIGÉ -->
-    <script>
-        const FORM = document.getElementById('modern-form');
-        // REMPLACER CETTE URL PAR VOTRE PROPRE LIEN GOOGLE APPS SCRIPT
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzt5km15di-5vsL3__Ma3YfZHn8aRiqFOJqW0UJqrhJw-BvoHsDlPg0yujHM5tsuEhwXw/exec';
-        
-        function updateProgress(page) {
-            const totalDash = 283;
-            const circles = [
-                { circle: document.getElementById('circle-1'), num: document.getElementById('num-1') },
-                { circle: document.getElementById('circle-2'), num: document.getElementById('num-2') },
-                { circle: document.getElementById('circle-3'), num: document.getElementById('num-3') }
-            ];
-            
-            circles.forEach((item, i) => {
-                const targetDash = i + 1 <= page ? 0 : totalDash;
-                item.circle.style.strokeDashoffset = targetDash + 'px';
-
-                if (i + 1 <= page) {
-                    item.num.className = 'text-lg font-bold text-light-blue';
-                } else {
-                    item.num.className = 'text-lg font-bold text-gray-400';
-                }
-            });
-            
-            const line1 = document.getElementById('line-1');
-            const line2 = document.getElementById('line-2');
-            if (line1) line1.style.width = page >= 2 ? '100%' : '0%';
-            if (line2) line2.style.width = page >= 3 ? '100%' : '0%';
-        }
-        
-        function validateCurrentPage(currentPage) {
-            const page = document.getElementById('page-' + currentPage);
-            const inputs = page.querySelectorAll('input[required], select[required], textarea[required]');
-            let isValid = true;
-            
-            for (let input of inputs) {
-                if (!input.checkValidity()) {
-                    input.reportValidity();
-                    isValid = false;
-                    break;
-                }
-                // Check radio groups
-                if (input.type === 'radio' && input.hasAttribute('required')) {
-                    const name = input.name;
-                    const checked = page.querySelector(`input[name="${name}"]:checked`);
-                    if (!checked) {
-                        input.reportValidity();
-                        isValid = false;
-                        break;
-                    }
-                }
-            }
-            return isValid;
-        }
-        
-        function nextPage(pageNum) {
-            const cur = pageNum - 1;
-            if (!validateCurrentPage(cur)) return;
-            
-            document.getElementById('page-' + cur).classList.remove('active');
-            document.getElementById('page-' + pageNum).classList.add('active');
-            updateProgress(pageNum);
-            window.scrollTo({ top: document.getElementById('devis-section').offsetTop, behavior: 'smooth' });
-            
-            // Masquer les messages d'erreur si l'utilisateur avance
-            document.getElementById('error-message').classList.add('hidden');
-        }
-        
-        function prevPage(pageNum) {
-            const cur = pageNum + 1;
-            document.getElementById('page-' + cur).classList.remove('active');
-            document.getElementById('page-' + pageNum).classList.add('active');
-            updateProgress(pageNum);
-            window.scrollTo({ top: document.getElementById('devis-section').offsetTop, behavior: 'smooth' });
-        }
-        
-        FORM.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            if (!validateCurrentPage(3)) return;
-
-            const button = document.getElementById('submit-btn');
-            const formWrapper = document.getElementById('form-wrapper');
-            const originalButtonText = button.innerHTML;
-            
-            button.disabled = true;
-            button.innerHTML = '<span class="animate-pulse">⏳ Envoi en cours...</span>';
-
-            // Masquer les erreurs précédentes
-            document.getElementById('error-message').classList.add('hidden');
-            
-            const formData = new FormData(FORM);
-            
-            fetch(SCRIPT_URL, {
-                method: 'POST',
-                body: formData,
-                mode: 'no-cors'
-            })
-            .then(() => {
-                // Remplacement du formulaire par le message de succès
-                formWrapper.innerHTML = `
-                    <div class="text-center p-12 rounded-2xl shadow-xl bg-white" style="border: 2px solid var(--color-light-blue);">
-                        <svg class="w-16 h-16 text-light-blue mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <h3 class="text-3xl font-bold text-dark-blue mb-2">Demande Envoyée !</h3>
-                        <p class="text-xl text-gray-600">Votre devis est en cours de préparation.</p>
-                        <p class="mt-4 text-lg font-medium text-dark-blue">Un conseiller Bâti Rénov vous recontactera sous 24h.</p>
-                        <button type="button" onclick="window.location.reload()" class="mt-8 bg-dark-blue text-white font-bold py-3 px-8 rounded-xl hover:bg-light-blue transition-all">
-                            Retour à la page d'accueil
-                        </button>
-                    </div>
-                `;
-                window.scrollTo({ top: document.getElementById('devis-section').offsetTop, behavior: 'smooth' });
-            })
-            .catch(err => {
-                console.error('Erreur lors de l\'envoi du formulaire:', err);
-                
-                // Rétablit le bouton et affiche un message d'erreur visible
-                button.disabled = false;
-                button.innerHTML = originalButtonText;
-                
-                const errorMessage = document.getElementById('error-message');
-                errorMessage.classList.remove('hidden');
-                errorMessage.textContent = '❌ Une erreur de connexion est survenue. Veuillez vérifier votre réseau ou réessayer plus tard.';
-
-                window.scrollTo({ top: document.getElementById('devis-section').offsetTop, behavior: 'smooth' });
-            });
-        });
-        
-        // Initialisation au chargement de la page
-        window.onload = function() {
-            updateProgress(1);
-            document.getElementById('year').textContent = new Date().getFullYear();
-        }
-
-        // Rendre les fonctions accessibles au niveau global
-        window.nextPage = nextPage;
-        window.prevPage = prevPage;
-    </script>
-</body>
-</html>
 
     <!-- 9. À Propos / Notre Entreprise -->
     <section id="a-propos" class="py-20 bg-gray-100">
@@ -1061,7 +994,7 @@
                  <div>
                     <h4 class="text-lg font-semibold mb-4 text-light-blue">Contact</h4>
                     <p class="text-sm text-gray-300 mb-2">Tél : 03 74 06 05 16</p>
-                    <p class="text-sm text-gray-300">15 RUE DU JEU DE MAIL, 59140 DUNKERQUE</p>
+                    <p class="text-sm text-gray-300">Hauts-de-France</p>
 <div class="mt-4">
     <img src="https://images.prismic.io/travauxlib%2F3fa3e9bb-6c86-4182-9f5f-6521078cd3bd_logo_qualibat-rge+hd.png?auto=compress%2Cformat&rect=0%2C0%2C2400%2C2911&h=2911&width=2048" 
          alt="Certificat de Qualité RGE" 
@@ -1071,7 +1004,7 @@
             </div>
 
             <div class="text-center text-sm text-gray-500 mt-8">
-                &copy; 2025 Bâti Rénov. Tous droits réservés. | Rénovation de Façade.
+                &copy; 2025 Bâti Rénov. Tous droits réservés. | Site Optimisé pour la Rénovation de Façade.
             </div>
         </div>
     </footer>
@@ -1319,13 +1252,28 @@
         window.onload = function() {
             updateProgress(1);
         }
-
-
     </script>
 <script>
-document.getElementById("btnMenuMobile").addEventListener("click", function () {
-    const menu = document.getElementById("menuMobile");
-    menu.classList.toggle("hidden");
+const btn = document.getElementById("btnMenuMobile");
+const menu = document.getElementById("menuMobile");
+let menuOpen = false;
+
+btn.addEventListener("click", () => {
+    if (!menuOpen) {
+        menu.classList.remove("hidden", "menu-close");
+        menu.classList.add("menu-open");
+        menuOpen = true;
+    } else {
+        menu.classList.remove("menu-open");
+        menu.classList.add("menu-close");
+
+        // Attendre la fin de l’animation avant de cacher
+        setTimeout(() => {
+            menu.classList.add("hidden");
+        }, 200);
+
+        menuOpen = false;
+    }
 });
 </script>
 
