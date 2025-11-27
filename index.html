@@ -678,7 +678,7 @@
 
     <!-- 6. Section Réalisations (Avant / Après) -->
 
-    <section id="realisations" class="py-20 bg-white">
+    <section id="realisations" class="py-20 bg-gray">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-extrabold text-center text-dark-blue mb-4">Nos Rénovations de Façade en Hauts-de-France</h2>
             <p class="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-16">La preuve par l'image de notre expertise en ravalement et ITE.</p>
@@ -740,20 +740,268 @@
     </section>
 
     <!-- 7. Section Témoignages Clients -->
-    <section class="py-20 bg-indigo-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-dark-blue mb-10">La Confiance de Nos Clients (Façade & ITE)</h2>
-            <blockquote class="text-center bg-white p-8 rounded-xl shadow-2xl border-t-4 border-light-blue">
-                <p class="text-xl font-medium italic text-gray-700 mb-6 leading-relaxed">
-                    « L'équipe Bâti Rénov a transformé l'extérieur de ma maison. Grâce à l'ITE et le ravalement, elle est magnifique et j'ai gagné 4°C en hiver ! Le conseiller a été très efficace pour gérer MaPrimeRénov'. »
-                </p>
-                <footer class="text-gray-600 mt-4">
-                    <div class="font-semibold text-lg text-dark-blue">Monsieur et Madame Dubois</div>
-                    <div class="text-sm">Ravalement + ITE, Lille (59)</div>
-                </footer>
-            </blockquote>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Témoignages Clients - Bâti Rénov</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-blue': '#1e3a8a',
+                        'light-blue': '#3b82f6',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .testimonial-slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .testimonial-slide.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .carousel-button {
+            transition: all 0.3s ease;
+        }
+        .carousel-button:hover {
+            transform: scale(1.1);
+            background-color: #1e40af;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Section Témoignages Clients avec Carrousel -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-dark-blue mb-4">La Confiance de Nos Clients (Façade & ITE)</h2>
+            <p class="text-center text-gray-600 mb-12 text-lg">Découvrez les expériences de nos clients satisfaits</p>
+            
+            <div class="relative">
+                <!-- Carrousel Container -->
+                <div class="overflow-hidden">
+                    
+                    <!-- Témoignage 1 -->
+                    <div class="testimonial-slide active">
+                        <div class="bg-gray rounded-2xl shadow-2xl overflow-hidden">
+                            <div class="grid md:grid-cols-2 gap-0">
+                                <!-- Photo -->
+                                <div class="flex items-center justify-center p-6">
+				<img src="https://files.cdn-files-a.com/uploads/10467913/400_6824c1c815b34.jpg"alt="Villa moderne après ITE"
+    				 class="w-64 h-48 object-cover rounded-2xl mx-auto">
+
+                                    <div class="absolute top-4 left-4 bg-light-blue text-white px-4 py-2 rounded-full text-sm font-semibold">
+                                        Ravalement + ITE
+                                    </div>
+                                </div>
+                                <!-- Contenu -->
+                                <div class="p-8 md:p-10 flex flex-col justify-center border-t-4 border-light-blue">
+                                    <div class="text-light-blue text-5xl mb-4">"</div>
+                                    <p class="text-lg md:text-xl font-medium italic text-gray-700 mb-6 leading-relaxed">
+                                        L'équipe Bâti Rénov a transformé l'extérieur de ma maison. Grâce à l'ITE et le ravalement, elle est magnifique et j'ai gagné 4°C en hiver ! Le conseiller a été très efficace pour gérer MaPrimeRénov'.
+                                    </p>
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-16 h-16 bg-gradient-to-br from-light-blue to-dark-blue rounded-full flex items-center justify-center text-white font-bold text-xl">
+                                            MD
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-lg text-dark-blue">M. et Mme Dubois</div>
+                                            <div class="text-sm text-gray-600">Lille (59)</div>
+                                            <div class="flex text-yellow-400 mt-1">★★★★★</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Témoignage 2 -->
+                    <div class="testimonial-slide">
+                        <div class="bg-gray rounded-2xl shadow-2xl overflow-hidden">
+                            <div class="grid md:grid-cols-2 gap-0">
+                                <!-- Photo -->
+                                <div class="flex items-center justify-center p-6">
+                                    <img src="https://images.cdn-files-a.com/ready_uploads/media/5019787/400_5eaf47190f7ef.jpg" 
+                                         alt="Villa moderne après ITE" 
+                                         class="w-64 h-48 object-cover rounded-2xl mx-auto">
+                                    <div class="absolute top-4 left-4 bg-light-blue text-white px-4 py-2 rounded-full text-sm font-semibold">
+                                        ITE Complète
+                                    </div>
+                                </div>
+                                <!-- Contenu -->
+                                <div class="p-8 md:p-10 flex flex-col justify-center border-t-4 border-light-blue">
+                                    <div class="text-light-blue text-5xl mb-4">"</div>
+                                    <p class="text-lg md:text-xl font-medium italic text-gray-700 mb-6 leading-relaxed">
+                                        Professionnalisme exemplaire ! Notre facture de chauffage a diminué de 40% après l'isolation thermique extérieure. Le chantier a été réalisé en 3 semaines sans désagrément. Je recommande vivement !
+                                    </p>
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-16 h-16 bg-gradient-to-br from-light-blue to-dark-blue rounded-full flex items-center justify-center text-white font-bold text-xl">
+                                            CM
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-lg text-dark-blue">Catherine Martin</div>
+                                            <div class="text-sm text-gray-600">Roubaix (59)</div>
+                                            <div class="flex text-yellow-400 mt-1">★★★★★</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Témoignage 3 -->
+                    <div class="testimonial-slide">
+                        <div class="bg-gray rounded-2xl shadow-2xl overflow-hidden">
+                            <div class="grid md:grid-cols-2 gap-0">
+                                <!-- Photo -->
+                                <div class="flex items-center justify-center p-6">
+                                    <img src="https://files.cdn-files-a.com/uploads/10467913/400_gi-692889fc91dc0.jpg" 
+                                         alt="Belle maison avec façade rénovée" 
+                                         class="w-64 h-48 object-cover rounded-2xl mx-auto">
+                                    <div class="absolute top-4 left-4 bg-light-blue text-white px-4 py-2 rounded-full text-sm font-semibold">
+                                        Ravalement Façade
+                                    </div>
+                                </div>
+                                <!-- Contenu -->
+                                <div class="p-8 md:p-10 flex flex-col justify-center border-t-4 border-light-blue">
+                                    <div class="text-light-blue text-5xl mb-4">"</div>
+                                    <p class="text-lg md:text-xl font-medium italic text-gray-700 mb-6 leading-relaxed">
+                                        Notre maison a retrouvé une seconde jeunesse ! L'équipe a été à l'écoute de nos souhaits pour le choix des couleurs. Le résultat dépasse nos attentes. Nos voisins nous ont même félicités !
+                                    </p>
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-16 h-16 bg-gradient-to-br from-light-blue to-dark-blue rounded-full flex items-center justify-center text-white font-bold text-xl">
+                                            JL
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-lg text-dark-blue">Jean Lefebvre</div>
+                                            <div class="text-sm text-gray-600">Tourcoing (59)</div>
+                                            <div class="flex text-yellow-400 mt-1">★★★★★</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Témoignage 4 -->
+                    <div class="testimonial-slide">
+                        <div class="bg-gray rounded-2xl shadow-2xl overflow-hidden">
+                            <div class="grid md:grid-cols-2 gap-0">
+                                <!-- Photo -->
+<div class="flex items-center justify-center p-6">
+    <img src="https://files.cdn-files-a.com/uploads/10467913/400_6824bc3095d0e.jpg"
+         alt="Maison contemporaine isolée"
+         class="w-64 h-48 object-cover rounded-2xl mx-auto">
+
+
+                                    <div class="absolute top-4 left-4 bg-light-blue text-white px-4 py-2 rounded-full text-sm font-semibold">
+                                        ITE + Enduit
+                                    </div>
+                                </div>
+                                <!-- Contenu -->
+                                <div class="p-8 md:p-10 flex flex-col justify-center border-t-4 border-light-blue">
+                                    <div class="text-light-blue text-5xl mb-4">"</div>
+                                    <p class="text-lg md:text-xl font-medium italic text-gray-700 mb-6 leading-relaxed">
+                                        Excellent accompagnement du début à la fin ! Les aides financières ont été gérées par Bâti Rénov, nous n'avons eu aucun souci. Le confort thermique est incomparable, même par grand froid.
+                                    </p>
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-16 h-16 bg-gradient-to-br from-light-blue to-dark-blue rounded-full flex items-center justify-center text-white font-bold text-xl">
+                                            SP
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-lg text-dark-blue">Sophie Petit</div>
+                                            <div class="text-sm text-gray-600">Marcq-en-Barœul (59)</div>
+                                            <div class="flex text-yellow-400 mt-1">★★★★★</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Boutons de navigation -->
+                <button onclick="changeSlide(-1)" 
+                        class="carousel-button absolute left-4 top-1/2 -translate-y-1/2 bg-dark-blue text-white w-6 h-6 rounded-full shadow-lg flex items-center justify-center z-10">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <button onclick="changeSlide(1)" 
+                        class="carousel-button absolute right-4 top-1/2 -translate-y-1/2 bg-dark-blue text-white w-6 h-6 rounded-full shadow-lg flex items-center justify-center z-10">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </button>
+
+                <!-- Indicateurs -->
+                <div class="flex justify-center gap-2 mt-8">
+                    <button onclick="goToSlide(0)" class="indicator w-3 h-3 rounded-full bg-dark-blue transition-all"></button>
+                    <button onclick="goToSlide(1)" class="indicator w-3 h-3 rounded-full bg-gray-300 transition-all"></button>
+                    <button onclick="goToSlide(2)" class="indicator w-3 h-3 rounded-full bg-gray-300 transition-all"></button>
+                    <button onclick="goToSlide(3)" class="indicator w-3 h-3 rounded-full bg-gray-300 transition-all"></button>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="text-center mt-16">
+                <p class="text-xl text-gray-700 mb-6">Rejoignez nos clients satisfaits !</p>
+                <a href="#contact" class="inline-block bg-light-blue text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-dark-blue transition-all transform hover:scale-105 shadow-lg">
+                    Demandez votre devis gratuit
+                </a>
+            </div>
         </div>
     </section>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const indicators = document.querySelectorAll('.indicator');
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(ind => {
+                ind.classList.remove('bg-dark-blue');
+                ind.classList.add('bg-gray-300');
+            });
+            
+            slides[index].classList.add('active');
+            indicators[index].classList.remove('bg-gray-300');
+            indicators[index].classList.add('bg-dark-blue');
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide >= slides.length) currentSlide = 0;
+            if (currentSlide < 0) currentSlide = slides.length - 1;
+            showSlide(currentSlide);
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            showSlide(currentSlide);
+        }
+
+        // Auto-play (optionnel)
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+    </script>
+
+</body>
+</html>
 
     <!-- 8. Section Devis Gratuit (FORMULAIRE MULTI-ÉTAPES ADAPTÉ) -->
 	
